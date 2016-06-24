@@ -18,7 +18,7 @@ MongoDB.once('open', function () {
   console.log('mongodb connection open!');
 });
 
-app.get( '/getPath', function( req, res ) {
+app.get( '/getAssign', function( req, res ) {
   Assignment.find( {}, function( err, assignments ) {
     if( err ) {
     res.sendStatus( 500 );
