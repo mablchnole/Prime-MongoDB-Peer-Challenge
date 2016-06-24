@@ -2,7 +2,7 @@ var express = require('express');
 var app=express();
 var path = require('path');
 var bodyParser = require('body-parser');
-app.use( bodyParser.json() );
+var assignments = require( '../models/assignments');
 
 var mongoose = require('mongoose');
 var mongoURI = "mongodb://localhost:27017/assignments";
@@ -26,6 +26,10 @@ app.get( '/getAssign', function( req, res ) {
     res.send( );
     }
   });
+});
+
+app.get( 'getPath', function( req, res ){
+
 });
 
 // spin up server
