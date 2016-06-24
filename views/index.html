@@ -1,12 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="myApp">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Assignments</title>
     <script type="text/javascript" src="vendors/angular.min.js"></script>
     <script type="text/javascript" src="scripts/script.js"></script>
   </head>
   <body>
-
+    <h1>Assignments</h1>
+    <div ng-controller="assignments">
+      <input type="text" value="" ng-model="titleIn" placeholder="Title">
+      <input type="text" value="" ng-model="numIn" placeholder="Assignment Number">
+      <input type="text" value="" ng-model="nameIn" placeholder="Student Name">
+      <input type="text" value="" ng-model="scoreIn" placeholder="Score">
+      <input type="text" value="" ng-model="dateIn" placeholder="Date Completed">
+      <button ng-click='addAssign()'>Add Assignment</button>
+      <table id="assignTable">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Assignment Number</th>
+              <th>Student Name</th>
+              <th>Score</th>
+              <th>Date Completed</th>
+            </tr>
+          </thead>
+        <tbody>
+          <tr ng-repeat="record in allAssignments">
+            <td> {{ record.title }} </td>
+            <td> {{ record.number }} </td>
+            <td> {{ record.name }} </td>
+            <td> {{ record.score }} </td>
+            <td> {{ record.date }} </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </body>
 </html>
