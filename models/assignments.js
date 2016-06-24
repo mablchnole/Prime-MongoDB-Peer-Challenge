@@ -9,6 +9,6 @@ var newAssignment = new Schema({
   date_completed: { Date }
 });
 
-var Assignment = mongoose.model( 'assignments', newAssignment );
+var Assignment = mongoose.model( 'Assignment', newAssignment );
 
 module.exports = Assignment;

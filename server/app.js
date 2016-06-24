@@ -28,12 +28,23 @@ app.get( '/getAssign', function( req, res ) {
   });
 });
 
-app.get( 'getPath', function( req, res ){
-
+app.get( '/getPath', function( req, res ){
+  Assignment.find()
+  .then( function( data ){
+    res.send( data );
+  });
 });
 
-app.post( 'postPath', function( req, res ){
-
+app.post( '/postPath', function( req, res ){
+  var assignToAdd = {
+    title: req.body.title,
+    assignment_number: req.body.number,
+    student_name: req.body.name,
+    score: req.body.score,
+    date_completed: req.body.date
+  };
+  var serverPackage = Assignment( assignToAdd );
+  serverPackage.save();
 });
 
 // spin up server
