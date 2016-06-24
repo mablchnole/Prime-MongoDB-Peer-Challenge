@@ -1,5 +1,10 @@
-var mongoose = require('mongoose');
+var express = require('express');
+var app=express();
+var path = require('path');
+var bodyParser = require('body-parser');
+app.use( bodyParser.json() );
 
+var mongoose = require('mongoose');
 var mongoURI = "mongodb://localhost:27017/assignments";
 var MongoDB = mongoose.connect(mongoURI).connection;
 
@@ -12,8 +17,8 @@ MongoDB.once('open', function () {
 });
 
 // spin up server
-app.listen(1234, 'localhost', function(req, res){
-  console.log('server listening on 1234');
+app.listen( 1234, 'localhost', function( req, res ){
+  console.log( 'listening on 1234' );
 });
 
 // set static folder to public
