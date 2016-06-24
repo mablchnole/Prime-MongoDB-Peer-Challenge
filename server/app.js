@@ -32,6 +32,10 @@ app.get( 'getPath', function( req, res ){
 
 });
 
+app.post( 'postPath', function( req, res ){
+
+});
+
 // spin up server
 app.listen( 1234, 'localhost', function( req, res ){
   console.log( 'listening on 1234' );

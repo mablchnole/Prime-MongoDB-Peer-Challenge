@@ -19,11 +19,11 @@ myApp.controller('assignments', ['$scope', '$http', function($scope, $http){
 
     ////////// post call to the server with the object to be stored in DB //////////
 
-    // $http({
-    //   method: 'POST',
-    //   url: '/testPost',
-    //   data: objectToSend
-    // });
+    $http({
+      method: 'POST',
+      url: '/postPath',
+      data: objectToSend
+    });
 
     // clear inputs
     $scope.titleIn ='';
@@ -34,7 +34,14 @@ myApp.controller('assignments', ['$scope', '$http', function($scope, $http){
   }; // end addAssign
 
   ////////// get call to retrieve assignments from DB //////////
-
+$http({
+  method: 'GET',
+  url: '/getPath',
+}).then( function( response ){
+  $scope.allAssignments = response.data;
+}, function myError( response ) {
+  console.log( response.statusText );
+});
 
 
 }]); // end controller
