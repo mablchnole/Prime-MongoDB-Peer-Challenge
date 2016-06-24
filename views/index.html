@@ -13,7 +13,7 @@
       <input type="text" value="" ng-model="numIn" placeholder="Assignment Number">
       <input type="text" value="" ng-model="nameIn" placeholder="Student Name">
       <input type="text" value="" ng-model="scoreIn" placeholder="Score">
-      <input type="text" value="" ng-model="dateIn" placeholder="Date Completed">
+      <!-- <input type="text" value="" ng-model="dateIn" placeholder="Date Completed"> -->
       <button ng-click='addAssign()'>Add Assignment</button>
       <table id="assignTable">
           <thead>
@@ -28,10 +28,10 @@
         <tbody>
           <tr ng-repeat="record in allAssignments">
             <td> {{ record.title }} </td>
-            <td> {{ record.number }} </td>
-            <td> {{ record.name }} </td>
+            <td> {{ record.assignment_number }} </td>
+            <td> {{ record.student_name }} </td>
             <td> {{ record.score }} </td>
-            <td> {{ record.date }} </td>
+            <td> {{ record.date_completed|date }} </td>
           </tr>
         </tbody>
       </table>

@@ -2,7 +2,7 @@ var express = require('express');
 var app=express();
 var path = require('path');
 var bodyParser = require('body-parser');
-var assignments = require( '../models/assignments');
+var Assignment = require( '../models/assignments');
 
 var mongoose = require('mongoose');
 var mongoURI = "mongodb://localhost:27017/assignments";
@@ -32,6 +32,7 @@ app.get( '/getPath', function( req, res ){
   Assignment.find()
   .then( function( data ){
     res.send( data );
+    console.log(data);
   });
 });
 
@@ -41,8 +42,9 @@ app.post( '/postPath', function( req, res ){
     assignment_number: req.body.number,
     student_name: req.body.name,
     score: req.body.score,
-    date_completed: req.body.date
+    date_completed: new Date()
   };
+  console.log( 'Server received: ' + assignToAdd.title + ', ' + assignToAdd.score + ', ' + assignToAdd.assignment_number + ', ' + assignToAdd.date_completed + '.');
   var serverPackage = Assignment( assignToAdd );
   serverPackage.save();
 });

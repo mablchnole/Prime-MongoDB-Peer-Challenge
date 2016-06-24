@@ -39,6 +39,7 @@ $http({
   url: '/getPath',
 }).then( function( response ){
   $scope.allAssignments = response.data;
+  console.log( 'Sending ' + response + " from db.");
 }, function myError( response ) {
   console.log( response.statusText );
 });
