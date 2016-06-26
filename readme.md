@@ -1,6 +1,4 @@
-Prime Peer Challenge
-
-# prime_peer_db_01
+# Prime Peer Challenge
 In this exercise you'll be creating a MongoDB application to store student assignment information, including the assignment name, the student's identity, their score on the assignment, and the date it was turned in. Only the identity and date completed are required.
 
 The purpose of this exercise is to help understand the way Document Databases function, and how to interact with them.
