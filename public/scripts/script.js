@@ -17,8 +17,7 @@ myApp.controller('assignments', ['$scope', '$http', function($scope, $http){
     }; // end objectToSend
     console.log('objectToSend: ', objectToSend);
 
-    ////////// post call to the server with the object to be stored in DB //////////
-
+    // post call to the server with the object to be stored in DB
     $http({
       method: 'POST',
       url: '/postPath',
@@ -33,16 +32,15 @@ myApp.controller('assignments', ['$scope', '$http', function($scope, $http){
     $scope.dateIn ='';
   }; // end addAssign
 
-  ////////// get call to retrieve assignments from DB //////////
-$http({
-  method: 'GET',
-  url: '/getPath',
-}).then( function( response ){
-  $scope.allAssignments = response.data;
-  console.log( 'Sending ' + response + " from db.");
-}, function myError( response ) {
-  console.log( response.statusText );
-});
-
+  // get call to retrieve assignments from DB
+  $http({
+    method: 'GET',
+    url: '/getPath',
+  }).then( function( response ){
+    $scope.allAssignments = response.data;
+    console.log( 'Sending ' + response + " from db.");
+  }, function myError( response ) {
+    console.log( response.statusText );
+  });
 
 }]); // end controller
