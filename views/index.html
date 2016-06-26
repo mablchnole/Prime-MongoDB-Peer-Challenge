@@ -5,17 +5,33 @@
     <title>Assignments</title>
     <script type="text/javascript" src="vendors/angular.min.js"></script>
     <script type="text/javascript" src="scripts/script.js"></script>
+    <link rel="stylesheet" href="vendors/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="css/stylesheet.css" media="screen" title="no title" charset="utf-8">
   </head>
   <body>
-    <h1>Assignments</h1>
+    <h1>Student Assignment Information</h1>
     <div ng-controller="assignments">
-      <input type="text" value="" ng-model="titleIn" placeholder="Title">
-      <input type="text" value="" ng-model="numIn" placeholder="Assignment Number">
-      <input type="text" value="" ng-model="nameIn" placeholder="Student Name">
-      <input type="text" value="" ng-model="scoreIn" placeholder="Score">
-      <!-- <input type="text" value="" ng-model="dateIn" placeholder="Date Completed"> -->
-      <button ng-click='addAssign()'>Add Assignment</button>
-      <table id="assignTable">
+      <form role="form" class="form-inline">
+        <div class="form-group">
+          <label for="assignment-name">Assignment Name</label>
+          <input id="assignment-name" class="form-control" type="text" value="" ng-model="titleIn" placeholder="Enter Assignment">
+        </div>
+        <div class="form-group">
+          <label for="assignment-num">Assignment Number</label>
+          <input id="assignment-num" class="form-control" type="text" value="" ng-model="numIn" placeholder="Enter Assignment Number">
+        </div>
+        <div class="form-group">
+          <label for="student-name">Student Name</label>
+          <input id="student-name" class="form-control" type="text" value="" ng-model="nameIn" placeholder="Enter Student Name">
+        </div>
+        <div class="form-group">
+          <label for="score">Score</label>
+          <input id="score" class="form-control" type="text" value="" ng-model="scoreIn" placeholder="Enter Score">
+        </div>
+        <!-- <input type="text" value="" ng-model="dateIn" placeholder="Date Completed"> -->
+        <button type="submit" ng-click="addAssign()" class="btn">Add Assignment</button>
+      </form>
+      <table id="assignTable" class="table table-striped">
           <thead>
             <tr>
               <th>Title</th>
