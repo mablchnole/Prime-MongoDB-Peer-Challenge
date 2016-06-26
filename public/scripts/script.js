@@ -1,5 +1,7 @@
 var myApp=angular.module('myApp', []);
 
+
+
 // create a controller
 myApp.controller('assignments', ['$scope', '$http', function($scope, $http){
   $scope.allAssignments = [];
@@ -17,6 +19,13 @@ myApp.controller('assignments', ['$scope', '$http', function($scope, $http){
     }; // end objectToSend
     console.log('objectToSend: ', objectToSend);
 
+    // append new assignment to DOM
+    $scope.titleIn ='';
+    $scope.numIn ='';
+    $scope.nameIn ='';
+    $scope.scoreIn ='';
+    $scope.dateIn ='';
+
     // post call to the server with the object to be stored in DB
     $http({
       method: 'POST',
@@ -24,12 +33,6 @@ myApp.controller('assignments', ['$scope', '$http', function($scope, $http){
       data: objectToSend
     });
 
-    // clear inputs
-    $scope.titleIn ='';
-    $scope.numIn ='';
-    $scope.nameIn ='';
-    $scope.scoreIn ='';
-    $scope.dateIn ='';
   }; // end addAssign
 
   // get call to retrieve assignments from DB
@@ -41,6 +44,6 @@ myApp.controller('assignments', ['$scope', '$http', function($scope, $http){
     console.log( 'Sending ' + response + " from db.");
   }, function myError( response ) {
     console.log( response.statusText );
-  });
+  }); // end getPath
 
 }]); // end controller

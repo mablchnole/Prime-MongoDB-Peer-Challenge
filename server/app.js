@@ -21,8 +21,8 @@ MongoDB.once('open', function () {
 });
 
 // spin up server
-app.listen( 1234, 'localhost', function( req, res ){
-  console.log( 'listening on 1234' );
+app.listen( 3000, 'localhost', function( req, res ){
+  console.log( 'listening on 3000' );
 });
 
 // set static folder to public
